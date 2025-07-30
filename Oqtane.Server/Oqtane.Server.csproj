@@ -46,7 +46,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.0" />
     <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="9.0.0" />
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.11-pre20241216174303" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.6" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
     <PackageReference Include="HtmlAgilityPack" Version="1.11.72" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
@@ -63,12 +63,12 @@
     <SqlServerFiles Include="$(OutputPath)Oqtane.Database.SqlServer.dll;$(OutputPath)Oqtane.Database.SqlServer.pdb;$(OutputPath)Microsoft.EntityFrameworkCore.SqlServer.dll" />
   </ItemGroup>
   <Target Name="AddPayloadsFolder" AfterTargets="Publish">
-    <Copy SourceFiles="@(ModuleTemplateFiles)" DestinationFiles="@(ModuleTemplateFiles->'$(PublishDir)wwwroot\Modules\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(ThemeTemplateFiles)" DestinationFiles="@(ThemeTemplateFiles->'$(PublishDir)wwwroot\Themes\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(MySQLFiles)" DestinationFiles="@(MySQLFiles->'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(PostgreSQLFiles)" DestinationFiles="@(PostgreSQLFiles->'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(SqliteFiles)" DestinationFiles="@(SqliteFiles->'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
-    <Copy SourceFiles="@(SqlServerFiles)" DestinationFiles="@(SqlServerFiles->'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(ModuleTemplateFiles)" DestinationFiles="@(ModuleTemplateFiles-&gt;'$(PublishDir)wwwroot\Modules\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(ThemeTemplateFiles)" DestinationFiles="@(ThemeTemplateFiles-&gt;'$(PublishDir)wwwroot\Themes\Templates\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(MySQLFiles)" DestinationFiles="@(MySQLFiles-&gt;'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(PostgreSQLFiles)" DestinationFiles="@(PostgreSQLFiles-&gt;'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(SqliteFiles)" DestinationFiles="@(SqliteFiles-&gt;'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(SqlServerFiles)" DestinationFiles="@(SqlServerFiles-&gt;'$(PublishDir)%(Filename)%(Extension)')" SkipUnchangedFiles="false" />
   </Target>
   <ItemGroup>
     <!-- extends watching group to include *.dll files and exclude the ones cause an infinite loop -->
